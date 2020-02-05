@@ -11,9 +11,9 @@ EXPOSE 8080
 ARG JAR_FILE=target/rest-api-0.0.1-SNAPSHOT.jar
 
 # Copy the application's jar to the container
-COPY target/rest-api-0.0.1-SNAPSHOT.jar app/web-api/rest-api.jar
+COPY target/rest-api-0.0.1-SNAPSHOT.jar app/rest-api.jar
 
 WORKDIR /app
 
 # Run the jar file
-CMD ["java", "-jar", "web-api/rest-api.jar"]
+CMD ["java", "-jar", "rest-api.jar"]
