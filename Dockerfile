@@ -6,7 +6,7 @@ RUN mkdir /app
 
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
-
+pwd
 # Define arg for the application's jar file
 ARG JAR_FILE=target/rest-api-0.0.1-SNAPSHOT.jar
 
