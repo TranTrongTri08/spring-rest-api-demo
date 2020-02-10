@@ -45,7 +45,7 @@ pipeline {
     }
     stage('Run docker container') {
       steps{
-        sh "docker container run -p 8080:8080 --name spring-rest-api $imageTag"
+        sh "docker container run -p 8080:8080 $imageTag"
       }
     }
   }
