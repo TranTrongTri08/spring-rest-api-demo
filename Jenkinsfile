@@ -1,4 +1,4 @@
-Jenkinsfile (Declarative Pipeline)
+//Jenkinsfile (Declarative Pipeline)
 pipeline {
   environment {
     registry = "181296/spring-rest-api"
@@ -6,8 +6,15 @@ pipeline {
     dockerImage = ''
     imageTag = ''
   }
-  agent any
   // Specifies where the entire Pipeline, or a specific stage, will execute in the Jenkins environment
+  agent any
+  input{
+		message "Press Ok to continue"
+		submitter "admin"
+		parameters {
+			string(name:'username', defaultValue: 'user', description: 'Username of the user pressing Ok')
+		}
+	}
   stages {
     stage('Cloning Git') {
       steps {
