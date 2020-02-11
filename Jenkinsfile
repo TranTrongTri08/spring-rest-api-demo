@@ -1,4 +1,4 @@
-#!/usr/bin/env groovy
+Jenkinsfile (Declarative Pipeline)
 pipeline {
   environment {
     registry = "181296/spring-rest-api"
@@ -7,6 +7,7 @@ pipeline {
     imageTag = ''
   }
   agent any
+  // Specifies where the entire Pipeline, or a specific stage, will execute in the Jenkins environment
   stages {
     stage('Cloning Git') {
       steps {
