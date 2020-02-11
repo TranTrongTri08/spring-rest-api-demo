@@ -8,15 +8,16 @@ pipeline {
   }
   // Specifies where the entire Pipeline, or a specific stage, will execute in the Jenkins environment
   agent any
-  input{
+  stages {
+    
+    stage('Cloning Git') {
+      input {
 		message "Press Ok to continue"
 		submitter "admin"
 		parameters {
 			string(name:'username', defaultValue: 'user', description: 'Username of the user pressing Ok')
 		}
 	}
-  stages {
-    stage('Cloning Git') {
       steps {
         git 'https://github.com/TranTrongTri08/spring-rest-api-demo.git'
       }
