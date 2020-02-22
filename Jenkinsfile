@@ -9,6 +9,7 @@ pipeline {
   // Specifies where the entire Pipeline, or a specific stage, will execute in the Jenkins environment
   agent any
   stages {
+	  
     
     stage('Cloning Git') {
       input {
@@ -20,6 +21,8 @@ pipeline {
 	}
       steps {
         git 'https://github.com/TranTrongTri08/spring-rest-api-demo.git'
+	echo 'Clone project name: ' + $projectName
+	echo 'Build version: ' + $buildVersion
       }
     }
     stage('Build') {
