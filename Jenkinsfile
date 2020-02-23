@@ -12,13 +12,6 @@ pipeline {
 	  
     
     stage('Cloning Git') {
-      input {
-		message "Press Ok to continue"
-		submitter "admin"
-		parameters {
-			string(name:'username', defaultValue: 'user', description: 'Username of the user pressing Ok')
-		}
-	}
       steps {
         git 'https://github.com/TranTrongTri08/spring-rest-api-demo.git'
 	echo 'Clone project name: ' + $projectName
@@ -48,11 +41,6 @@ pipeline {
           }
           echo 'Push image to docker hub scuccessfully'
         }
-      }
-    }
-    stage('Remove unused docker image') {
-      steps{
-        sh "docker rmi $imageTag"
       }
     }
     stage('Run docker container') {
