@@ -14,8 +14,8 @@ pipeline {
     stage('Cloning Git') {
       steps {
         git 'https://github.com/TranTrongTri08/spring-rest-api-demo.git'
-	echo 'Clone project name: ' + $projectName
-	echo 'Build version: ' + $buildVersion
+	//echo 'Clone project name: ' + $projectName
+	//echo 'Build version: ' + $buildVersion
       }
     }
     stage('Build') {
